@@ -1,0 +1,31 @@
+select last_name, job_title, department_name
+from employees
+join departments using(department_id)
+join jobs using(job_id);
+
+SELECT *
+FROM DEPARTMENTS;
+SELECT *
+FROM EMPLOYEES;
+SELECT *
+FROM LOCATIONS;
+SELECT *
+FROM COUNTRIES;
+
+SELECT LAST_NAME, CITY, DEPARTMENT_ID
+FROM DEPARTMENTS
+join EMPLOYEES USING (department_id)
+join LOCATIONS USING (location_id)
+WHERE CITY = 'Seattle' OR
+      CITY = 'Oxford'
+ORDER by CITY ASC;
+
+SELECT EMPLOYEE_ID,LAST_NAME,DEPARTMENT_NAME, CITY,STREET_ADDRESS,COUNTRY_NAME
+FROM DEPARTMENTS
+join EMPLOYEES USING (department_id)
+join LOCATIONS USING (location_id)
+join COUNTRIES USING (country_id)
+WHERE STREET_ADDRESS LIKE '%Ch%' OR
+      STREET_ADDRESS LIKE '%Sh%' OR
+      STREET_ADDRESS LIKE '%Rd%'
+ORDER BY COUNTRY_NAME ASC, CITY ASC;
